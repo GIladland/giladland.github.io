@@ -3,156 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Djez Landau — Academic Homepage</title>
-  <meta name="description" content="Djez (Gilad) Landau — DPhil researcher at Oxford. AI × Neuroscience: brain-to-language decoding, MEG/EEG, speech BCIs." />
-  <meta property="og:title" content="Djez Landau — Academic Homepage" />
-  <meta property="og:description" content="AI × Neuroscience: brain-to-language decoding, MEG/EEG, speech BCIs." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/social-card.png" />
+  <title>Djez Landau</title>
+  <meta name="description" content="Djez (Gilad) Landau — Academic homepage" />
   <meta name="color-scheme" content="light dark" />
   <style>
-    :root{
-      --bg: #ffffff; --fg:#0f172a; --muted:#475569; --accent:#2563eb; --card:#f8fafc;
-      --border:#e2e8f0; --link:#1d4ed8;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{ --bg:#0b1020; --fg:#e6e8ef; --muted:#97a0b7; --accent:#7aa2ff; --card:#0f162e; --border:#1e2a4a; --link:#9ab6ff; }
-    }
+    :root{ --bg:#ffffff; --fg:#0f172a; --muted:#64748b; --border:#e5e7eb; }
+    @media (prefers-color-scheme: dark){ :root{ --bg:#0b1020; --fg:#e6e8ef; --muted:#93a0b5; --border:#1e2a4a; } }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.6}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:980px;margin-inline:auto;padding:28px}
-    header{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    nav{display:flex;gap:18px;font-weight:600}
-    nav a{opacity:.9}
-    nav a:hover{opacity:1}
-    .hero{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;margin-top:22px;padding:22px;border:1px solid var(--border);background:var(--card);border-radius:18px}
-    .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,var(--border),transparent);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
-    h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0}
-    .subtitle{color:var(--muted);margin-top:6px}
-    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:transparent}
-    .btn.primary{background:var(--accent);border-color:var(--accent);color:white}
-    section{margin-top:34px}
-    .card{padding:20px;border:1px solid var(--border);background:var(--card);border-radius:16px}
-    h2{font-size:22px;margin:0 0 14px}
-    ul{margin:0;padding-left:20px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .muted{color:var(--muted)}
-    footer{margin:40px 0 10px;color:var(--muted);font-size:14px}
-    .tag{display:inline-block;border:1px solid var(--border);padding:2px 8px;border-radius:999px;margin-right:8px;font-size:12px;color:var(--muted)}
-    .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    code{background:var(--card);border:1px solid var(--border);padding:1px 6px;border-radius:8px}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial;}
+    .wrap{min-height:100svh;display:grid;grid-template-rows:1fr auto}
+    main{display:grid;place-items:center;padding:24px}
+    .hero-img{width:min(900px,92vw);aspect-ratio:16/9;object-fit:cover;border-radius:18px;border:1px solid var(--border)}
+    footer{border-top:1px solid var(--border);padding:18px 14px}
+    .bottom{max-width:980px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .me{display:flex;align-items:center;gap:12px}
+    .me img{width:44px;height:44px;border-radius:999px;border:1px solid var(--border);object-fit:cover}
+    .me strong{font-weight:700}
+    .links{display:flex;gap:16px;flex-wrap:wrap}
+    a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+    a:hover{border-bottom-color:currentColor}
   </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Djez (Gilad) Landau",
-    "url":"https://<your-username>.github.io/",
-    "affiliation":{"@type":"CollegeOrUniversity","name":"University of Oxford"},
-    "jobTitle":"DPhil Researcher (Engineering Science)",
-    "knowsAbout":["brain-computer interfaces","MEG","EEG","speech decoding","AI","neuroscience"],
-    "sameAs":["https://scholar.google.com/citations?user=<id>","https://orcid.org/<id>","https://github.com/<your-username>"]
-  }
-  </script>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="row">
-        <strong>Djez Landau</strong>
-        <span class="tag">AI × Neuroscience</span>
-        <span class="tag">Speech BCIs</span>
-        <span class="tag">MEG ➜ EEG</span>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#talks">Talks</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <div class="hero">
-      <div class="avatar">DL</div>
-      <div>
-        <h1>Hi — I’m Djez (Gilad) Landau</h1>
-        <p class="subtitle">DPhil researcher in Engineering Science at the University of Oxford (PNPL Lab). I build non‑invasive brain‑to‑language decoders using MEG/EEG and modern representation learning.</p>
-        <div class="btns">
-          <a class="btn primary" href="#publications">Latest work</a>
-          <a class="btn" href="https://github.com/<your-username>">GitHub</a>
-          <a class="btn" href="https://scholar.google.com/citations?user=<id>">Google Scholar</a>
-          <a class="btn" href="https://orcid.org/<id>">ORCID</a>
-        </div>
-      </div>
-    </div>
-
-    <section id="about" class="card">
-      <h2>About</h2>
-      <p>I study how to map neural time‑series to language semantics. My current project, <em>MEG2SEM</em>, aligns MEG recordings with sentence and word embeddings (E5/SONAR/ADA) and evaluates retrieval and representational geometry. I care about transfer from MEG prototypes to practical EEG/OPM systems.</p>
-      <p class="muted">Previously: published author and editor; now exploring AI‑assisted communication and accessibility.</p>
-    </section>
-
-    <section id="research" class="grid">
-      <div class="card">
-        <h2>Research Interests</h2>
-        <ul>
-          <li>Speech BCIs, non‑invasive decoding</li>
-          <li>MEG/EEG/OPM signal processing</li>
-          <li>Representation learning & retrieval</li>
-          <li>Embedding geometry & isotropy</li>
-          <li>Evaluation: RSA, CKA, nDCG, Procrustes</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>In Progress</h2>
-        <ul>
-          <li><strong>MEG2SEM</strong>: mapping MEG to semantic vectors with contrastive + alignment losses.</li>
-          <li><strong>Hawaiian ASR</strong>: fine‑tuning Whisper on Ka Leo Hawaiʻi to improve low‑resource ASR.</li>
-          <li><strong>EEG transfer</strong>: domain adaptation from MEG predictors to portable EEG.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="publications" class="card">
-      <h2>Publications & Preprints</h2>
-      <ul>
-        <li><strong>MEG2SEM: Detecting Brain Signal in Text Space</strong> — arXiv, 2025. <a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">Poster</a></li>
-        <li><strong>Speech decoding without implants</strong> — in preparation. <span class="muted">Non‑invasive BCI pipeline emphasizing transfer to EEG/OPM.</span></li>
-        <li>(Earlier writing) <em>Selected publications as author/editor</em> — <a href="#">list</a>.</li>
-      </ul>
-    </section>
-
-    <section id="talks" class="card">
-      <h2>Talks</h2>
-      <ul>
-        <li>Invited: <em>Geometry‑aware decoding from MEG</em> — 2025.</li>
-        <li>Workshop: <em>Evaluating anisotropy in neural embeddings</em> — 2025.</li>
-      </ul>
-    </section>
-
-    <section id="teaching" class="card">
-      <h2>Teaching & Mentoring</h2>
-      <ul>
-        <li>Guest sessions on MEG/EEG pipelines, PyTorch training on HPC clusters.</li>
-        <li>Mentoring projects on retrieval metrics (nDCG/MRR) and Procrustes analysis.</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <p>Email: <code>firstname.lastname [at] eng.ox.ac.uk</code> · Office: Summertown, Oxford, UK</p>
-      <p class="muted">Also on <a href="https://github.com/<your-username>">GitHub</a>, <a href="https://scholar.google.com/citations?user=<id>">Google Scholar</a>, <a href="https://orcid.org/<id>">ORCID</a>.</p>
-    </section>
+    <main>
+      <!-- Replace src with your central image (e.g., a research photo or minimalist graphic) -->
+      <img class="hero-img" src="/hero.jpg" alt="" />
+    </main>
 
     <footer>
-      <div>© <span id="y"></span> Djez Landau · Built with plain HTML/CSS · <code>.nojekyll</code> ready</div>
+      <div class="bottom">
+        <div class="me">
+          <!-- Replace src with your headshot -->
+          <img src="/me.jpg" alt="Djez Landau" />
+          <strong>Djez Landau</strong>
+        </div>
+        <nav class="links">
+          <!-- Replace links below; keep labels exactly once, simple & lowercase as requested -->
+          <a href="#publications">latest work</a>
+          <a href="https://github.com/<your-username>">github</a>
+          <a href="https://scholar.google.com/citations?user=<id>">google scholar</a>
+          <a href="https://orcid.org/<id>">orcid</a>
+        </nav>
+      </div>
     </footer>
   </div>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
