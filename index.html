@@ -7,158 +7,154 @@
   <meta name="description" content="Gilad D. Landau — DPhil candidate in Engineering Science (Oxford). AI/Neuroscience, Brain–Computer Interfaces, speech decoding, MEG/EEG/OPM." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Literata:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #ffffff;
       --fg: #0b0b0c;
       --muted: #5d6169;
-      --link: #0b57d0;
       --rule: #e8e9ed;
-      --measure: 72ch; /* maximum readable width */
+      --link: #0b57d0;
       --pad: 20px;
+      --measure: 72ch;
     }
     @media (prefers-color-scheme: dark) {
-      :root{ --bg:#0b0b10; --fg:#f2f5ff; --muted:#a9b3c9; --link:#8ab4ff; --rule:#232634; }
+      :root { --bg:#0b0b10; --fg:#f2f5ff; --muted:#a9b3c9; --rule:#232634; --link:#8ab4ff; }
     }
-    html,body{height:100%}
-    body{
+    html, body { height:100%; }
+    body {
       margin:0;
       background:var(--bg);
       color:var(--fg);
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      line-height:1.8;
-      letter-spacing:.1px;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
-    a{color:var(--link); text-decoration:none}
-    a:hover{text-decoration:underline}
+    a { color:var(--link); text-decoration:none; }
+    a:hover { text-decoration:underline; }
 
-    .wrap{max-width:var(--measure); margin:0 auto; padding:0 var(--pad)}
-    header{padding:48px 0 12px}
-    nav{display:flex; gap:14px; flex-wrap:wrap; font-weight:600; font-size:14px; color:var(--muted)}
-    nav a{color:inherit}
+    .wrap { max-width:1200px; margin:0 auto; padding:0 var(--pad); }
 
-    h1,h2,h3{font-family:"Literata", Georgia, serif; letter-spacing:.2px}
-    h1{font-size:clamp(34px, 6vw, 56px); line-height:1.08; margin:18px 0 6px}
-    h2{font-size:clamp(22px, 3vw, 28px); margin:28px 0 10px}
-    h3{font-size:18px; margin:0 0 6px; color:var(--muted)}
-    .subtitle{margin:0; color:var(--muted); font-weight:600}
+    header { padding:40px 0 20px; text-align:center; }
+    nav { display:flex; justify-content:center; gap:18px; flex-wrap:wrap; font-weight:600; font-size:14px; color:var(--muted); }
 
-    .rule{border:0; height:1px; background:var(--rule); margin:28px 0}
+    h1, h2, h3 { font-family:"Fraunces", Georgia, serif; }
+    h1 { font-size:clamp(34px, 5vw, 52px); line-height:1.1; margin:0; }
+    h2 { font-size:clamp(22px, 3vw, 30px); margin:0 0 16px; }
 
-    .hero{padding:22px 0 6px}
-    .links{display:flex; gap:18px; flex-wrap:wrap; margin:16px 0}
+    .about-section {
+      display:grid;
+      grid-template-columns: 340px 1fr;
+      gap:48px;
+      align-items:start;
+      margin:60px 0;
+    }
+    @media (max-width:820px){ .about-section { grid-template-columns: 1fr; text-align:center; } }
 
-    /* compact lists */
-    ul.flat{list-style:none; padding-left:0; margin:12px 0}
-    ul.flat li{margin:8px 0}
+    .profile {
+      text-align:center;
+    }
+    .profile img {
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid var(--rule);
+    }
+    .profile h1 { margin-top:20px; font-size:28px; }
+    .subtitle { color:var(--muted); font-weight:600; margin:6px 0 12px; }
 
-    /* publication list */
-    .pub{margin:14px 0}
-    .pub .meta{color:var(--muted); font-weight:600; font-size:14px}
-    .pub .title{font-weight:600}
+    .links { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:10px; }
 
-    footer{color:var(--muted); padding:36px 0 60px}
+    .links a { font-weight:600; font-size:14px; }
 
-    /* optional tiny avatar (kept unobtrusive) */
-    .avatar{width:64px; height:64px; border-radius:50%; object-fit:cover; border:1px solid var(--rule)}
+    section p { max-width:var(--measure); }
 
-    /* print tweaks */
-    @media print{ a{text-decoration:underline} nav{display:none} }
+    .pub { margin:20px 0; }
+    .pub .meta { color:var(--muted); font-weight:600; font-size:14px; }
+    .pub .title { font-weight:600; }
+
+    footer { text-align:center; color:var(--muted); border-top:1px solid var(--rule); padding:30px 0; margin-top:60px; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <nav aria-label="Primary">
+      <nav>
         <a href="#about">About</a>
         <a href="#work">Highlights</a>
         <a href="#pubs">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
-      <section class="hero">
-        <img src="profile.jpg" alt="Portrait" class="avatar" />
+    </header>
+
+    <section id="about" class="about-section">
+      <div class="profile">
+        <img src="profile.jpg" alt="Portrait of Gilad D. Landau">
         <h1>Gilad D. Landau</h1>
         <p class="subtitle">AI researcher · DPhil candidate, University of Oxford</p>
         <div class="links">
           <a href="mailto:gilad.landau@eng.ox.ac.uk">Email</a>
-          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
-          <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
-          <a href="/cv.pdf" target="_blank" rel="noopener">CV</a>
+          <a href="https://github.com/" target="_blank">GitHub</a>
+          <a href="https://scholar.google.com/" target="_blank">Scholar</a>
+          <a href="https://orcid.org/" target="_blank">ORCID</a>
+          <a href="/cv.pdf" target="_blank">CV</a>
         </div>
-      </section>
-      <hr class="rule" />
-    </header>
+      </div>
+      <div>
+        <h2>About me</h2>
+        <p>I’m interested in the general principles of intelligence and cognition. At Oxford’s <strong>PNPL</strong> lab, I study how AI can decode meaning from non‑invasive brain signals (MEG/EEG/OPM/fMRI). I build representation‑learning pipelines that map neural activity to semantic spaces and evaluate them with RSA, CKA, and retrieval metrics.</p>
+        <p>My broader goal is to uncover how representations of meaning arise and evolve—bridging cognitive neuroscience, machine learning, and philosophy of mind.</p>
+      </div>
+    </section>
 
-    <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>
-          I’m interested in the general principles of intelligence and cognition. At Oxford’s <strong>PNPL</strong> lab, I study how AI can decode meaning from non‑invasive brain signals (MEG/EEG/OPM/fMRI). I build representation‑learning pipelines that map neural activity to semantic spaces and evaluate them with RSA, CKA, and retrieval metrics.
-        </p>
-      </section>
+    <section id="work">
+      <h2>Highlights</h2>
+      <div class="pub">
+        <div class="meta">2025 · Preprint</div>
+        <div class="title">Unlocking Non‑Invasive Brain‑to‑Text</div>
+        <div class="meta">G. Landau, O. Parker‑Jones, PNPL</div>
+        <a href="#">PDF</a> · <a href="#">Code</a>
+      </div>
+      <div class="pub">
+        <div class="meta">2024 · Workshop</div>
+        <div class="title">The Brain’s Bitter Lesson: Scaling Speech Decoding with SSL</div>
+        <div class="meta">G. Landau et al.</div>
+        <a href="#">PDF</a>
+      </div>
+    </section>
 
-      <section id="work">
-        <h2>Highlights</h2>
-        <div class="pub">
-          <div class="meta">2025 · Preprint</div>
-          <div class="title">Unlocking Non‑Invasive Brain‑to‑Text</div>
-          <div class="meta">G. Landau, O. Parker‑Jones, PNPL</div>
-          <ul class="flat">
-            <li><a href="#">PDF</a> · <a href="#">Code</a></li>
-          </ul>
-        </div>
-        <div class="pub">
-          <div class="meta">2024 · Workshop Paper</div>
-          <div class="title">The Brain’s Bitter Lesson: Scaling Speech Decoding with SSL</div>
-          <div class="meta">G. Landau et al.</div>
-          <ul class="flat">
-            <li><a href="#">PDF</a></li>
-          </ul>
-        </div>
-      </section>
+    <section id="pubs">
+      <h2>Publications (selected)</h2>
+      <div class="pub">
+        <div class="meta">2025 · Manuscript</div>
+        <div class="title">Detecting Brain Signal in Text Space</div>
+      </div>
+      <div class="pub">
+        <div class="meta">2024 · Preprint</div>
+        <div class="title">Hawaiian ASR: Low‑resource Whisper Fine‑tuning</div>
+      </div>
+      <div class="pub">
+        <div class="meta">2024 · Workshop</div>
+        <div class="title">Semantic Alignment Losses for Brain Decoding</div>
+      </div>
+      <div class="pub">
+        <div class="meta">2023 · Project</div>
+        <div class="title">MEG2SEM: Mapping MEG to Semantic Spaces</div>
+      </div>
+    </section>
 
-      <section id="pubs">
-        <h2>Publications (selected)</h2>
-        <div class="pub">
-          <div class="meta">2025 · Manuscript</div>
-          <div class="title">Detecting Brain Signal in Text Space</div>
-          <div class="meta">Landau, G.</div>
-        </div>
-        <div class="pub">
-          <div class="meta">2024 · Preprint</div>
-          <div class="title">Hawaiian ASR: Low‑resource Whisper Fine‑tuning</div>
-          <div class="meta">Landau, G.</div>
-        </div>
-        <div class="pub">
-          <div class="meta">2024 · Workshop</div>
-          <div class="title">Semantic Alignment Losses for Brain Decoding</div>
-          <div class="meta">Landau, G.</div>
-        </div>
-        <div class="pub">
-          <div class="meta">2023 · Project</div>
-          <div class="title">MEG2SEM: Mapping MEG to Semantic Spaces</div>
-          <div class="meta">Landau, G.</div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:gilad.landau@eng.ox.ac.uk">gilad.landau@eng.ox.ac.uk</a></p>
-        <p>Dept. of Engineering Science, Parks Road, Oxford · PNPL Lab</p>
-      </section>
-    </main>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:gilad.landau@eng.ox.ac.uk">gilad.landau@eng.ox.ac.uk</a></p>
+      <p>Dept. of Engineering Science, Parks Road, Oxford · PNPL Lab</p>
+    </section>
 
     <footer>
-      <hr class="rule" />
       <p>© <span id="year"></span> Gilad D. Landau</p>
     </footer>
   </div>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
