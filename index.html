@@ -1,246 +1,163 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gilad D. Landau</title>
-  <meta name="description" content="" />  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="description" content="Gilad D. Landau — DPhil candidate in Engineering Science (Oxford). AI/Neuroscience, Brain–Computer Interfaces, speech decoding, MEG/EEG/OPM." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Literata:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fcfcfa;
-      --fg: #0d1321;
-      --muted: #5e6b85;
-      --paper: #ffffff;
-      --accent: #c88f2a;
-      --accent-2: #3d9b8d;
-      --ring: #e7ebf3;
-      --chip: #f5f3ea;
-      --shadow: 0 6px 20px rgba(13,19,33,.08);
-      --radius: 20px;
-      --maxw: 940px;
+      --bg: #ffffff;
+      --fg: #0b0b0c;
+      --muted: #5d6169;
+      --link: #0b57d0;
+      --rule: #e8e9ed;
+      --measure: 72ch; /* maximum readable width */
+      --pad: 20px;
     }
-    .dark {
-      --bg: #0b0b10;
-      --fg: #f3f6ff;
-      --muted: #a9b3c9;
-      --paper: #12131a;
-      --accent: #d6a956;
-      --accent-2: #63b7a4;
-      --ring: #232634;
-      --chip: #1a2030;
-      --shadow: 0 8px 24px rgba(0,0,0,.35);
+    @media (prefers-color-scheme: dark) {
+      :root{ --bg:#0b0b10; --fg:#f2f5ff; --muted:#a9b3c9; --link:#8ab4ff; --rule:#232634; }
     }
-
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      letter-spacing: .1px;
-      line-height: 1.75;
-      overflow-x: hidden;
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height:1.8;
+      letter-spacing:.1px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    .wrap{max-width:var(--measure); margin:0 auto; padding:0 var(--pad)}
+    header{padding:48px 0 12px}
+    nav{display:flex; gap:14px; flex-wrap:wrap; font-weight:600; font-size:14px; color:var(--muted)}
+    nav a{color:inherit}
 
-    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+    h1,h2,h3{font-family:"Literata", Georgia, serif; letter-spacing:.2px}
+    h1{font-size:clamp(34px, 6vw, 56px); line-height:1.08; margin:18px 0 6px}
+    h2{font-size:clamp(22px, 3vw, 28px); margin:28px 0 10px}
+    h3{font-size:18px; margin:0 0 6px; color:var(--muted)}
+    .subtitle{margin:0; color:var(--muted); font-weight:600}
 
-    header { padding: 22px 0; }
-    .nav { display:flex; align-items:center; justify-content: space-between; gap:16px; }
-    .brand a { color: inherit; font-weight: 800; font-size: 18px; letter-spacing: .3px; }
-    .links { display:flex; gap: 18px; flex-wrap: wrap; }
-    .links a { color: var(--fg); opacity:.86; font-weight: 600; }
-    .links a:hover { opacity:1; }
-    .cta { display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius: 999px; background: var(--accent); color: white; font-weight:700; box-shadow: var(--shadow); border: 2px solid color-mix(in srgb, var(--accent), white 25%); }
+    .rule{border:0; height:1px; background:var(--rule); margin:28px 0}
 
-    .hero {
-      position: relative;
-      display:grid; grid-template-columns: 140px 1fr;
-      gap: 28px; padding: 60px 0 40px; align-items:center;
-    }
-    .hero::before {
-      content: "";
-      position: absolute; inset: 0;
-      background: url('moghul-bci.png') center/cover no-repeat;
-      opacity: .20;
-      filter: blur(2px) saturate(110%);
-      z-index: 0;
-    }
-    .hero > * { position: relative; z-index: 1; }
+    .hero{padding:22px 0 6px}
+    .links{display:flex; gap:18px; flex-wrap:wrap; margin:16px 0}
 
-    @media (max-width: 720px){ .hero { grid-template-columns: 1fr; text-align:center; } }
+    /* compact lists */
+    ul.flat{list-style:none; padding-left:0; margin:12px 0}
+    ul.flat li{margin:8px 0}
 
-    .avatar-wrap { position: relative; width: 140px; height: 140px; }
-    .halo { position:absolute; inset:-8px; background: conic-gradient(from 210deg, var(--accent), var(--accent-2), var(--accent)); border-radius: 50%; filter: blur(18px); opacity:.55; }
-    .avatar { position:relative; width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 6px solid var(--paper); box-shadow: var(--shadow); background: var(--paper); }
+    /* publication list */
+    .pub{margin:14px 0}
+    .pub .meta{color:var(--muted); font-weight:600; font-size:14px}
+    .pub .title{font-weight:600}
 
-    .title h1 { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: clamp(34px, 4.2vw, 56px); line-height:1.05; margin:0; letter-spacing:.2px; }
-    .subtitle { margin: 10px 0 0; font-weight: 600; font-size: 16px; color: var(--muted); }
-    .affil { margin-top:14px; font-weight: 600; color: var(--fg); opacity:.9; }
-    .quick { margin-top: 18px; display:flex; gap: 10px; flex-wrap: wrap; }
-    .pill { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius: 999px; border: 1px solid var(--ring); background: var(--paper); font-weight:700; }
+    footer{color:var(--muted); padding:36px 0 60px}
 
-    section { padding: 64px 0; }
-    h3.sec { font-family: "Fraunces", Georgia, serif; font-size: clamp(22px, 2.8vw, 30px); margin:0 0 20px; letter-spacing:.2px; }
+    /* optional tiny avatar (kept unobtrusive) */
+    .avatar{width:64px; height:64px; border-radius:50%; object-fit:cover; border:1px solid var(--rule)}
 
-    .cardless { background: var(--paper); border: 1px solid var(--ring); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
-
-    .grid { display:grid; gap:22px; }
-    @media (min-width: 860px) {
-      .grid.cols-2 { grid-template-columns: 1fr 1fr; }
-    }
-
-    footer { border-top: 1px solid var(--ring); color: var(--muted); padding: 40px 0 60px; }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .fade-in { animation: fade .6s ease-out both; }
-      @keyframes fade { from { opacity:0; transform: translateY(6px);} to { opacity:1; transform:none;} }
-    }
+    /* print tweaks */
+    @media print{ a{text-decoration:underline} nav{display:none} }
   </style>
 </head>
 <body>
-  <header class="container">
-    <div class="nav">
-      <div class="brand"><a href="#top">Gilad Landau</a></div>
-      <nav class="links" aria-label="Primary">
+  <div class="wrap">
+    <header>
+      <nav aria-label="Primary">
         <a href="#about">About</a>
-        <a href="#featured">Highlights</a>
-        <a href="#recent">Publications</a>
-        <a href="#contact" class="cta">Get in touch</a>
+        <a href="#work">Highlights</a>
+        <a href="#pubs">Publications</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </div>
-  </header>
-
-  <main id="top" class="container">
-    <section class="hero fade-in">
-      <div class="avatar-wrap">
-        <div class="halo" aria-hidden="true"></div>
+      <section class="hero">
         <img src="profile.jpg" alt="Portrait" class="avatar" />
-      </div>
-      <div class="title">
         <h1>Gilad D. Landau</h1>
-        <p class="subtitle">AI Researcher, PhD student at University of Oxford</p>
-        <div class="affil">
-          <a href="https://eng.ox.ac.uk/" target="_blank" rel="noopener">Dept. of Engineering Science</a> ·
-          <a href="https://www.ox.ac.uk/" target="_blank" rel="noopener">University of Oxford</a> ·
-          <a href="https://pnpl.ox.ac.uk/" target="_blank" rel="noopener">PNPL Lab</a>
+        <p class="subtitle">AI researcher · DPhil candidate, University of Oxford</p>
+        <div class="links">
+          <a href="mailto:gilad.landau@eng.ox.ac.uk">Email</a>
+          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
+          <a href="/cv.pdf" target="_blank" rel="noopener">CV</a>
         </div>
-        <div class="quick">
-          <a class="pill" href="#contact">Email</a>
-          <a class="pill" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
-          <a class="pill" href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
-          <a class="pill" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-          <a class="pill" href="/cv.pdf" target="_blank" rel="noopener">CV</a>
-        </div>
-      </div>
-    </section>
+      </section>
+      <hr class="rule" />
+    </header>
 
-    <section id="about" class="fade-in">
-      <h3 class="sec">About me</h3>
-      <div class="cardless">
+    <main>
+      <section id="about">
+        <h2>About</h2>
         <p>
-          I am an AI researcher curios about the deep principles from which intelligence and cognition emerge.<br> I was a technologist and philosopher, now working on a D.Phil at Oxford’s  <strong>PNPL</strong> lab, I study how AI can decode meaning from the brain.
+          I’m interested in the general principles of intelligence and cognition. At Oxford’s <strong>PNPL</strong> lab, I study how AI can decode meaning from non‑invasive brain signals (MEG/EEG/OPM/fMRI). I build representation‑learning pipelines that map neural activity to semantic spaces and evaluate them with RSA, CKA, and retrieval metrics.
         </p>
-      </div>
-    </section>
+      </section>
 
-    <section id="featured" class="fade-in">
-      <h3 class="sec">Highlights</h3>
-      <div id="featured-list" class="grid cols-2"></div>
-    </section>
-
-    <section id="recent" class="fade-in">
-      <h3 class="sec">Recent Publications</h3>
-      <div id="pub-list" class="grid"></div>
-    </section>
-
-    <section id="contact" class="fade-in">
-      <h3 class="sec">Contact</h3>
-      <div class="grid cols-2">
-        <div class="cardless">
-          <h4>Get in touch</h4>
-          <p>Email: <a href="mailto:gilad.landau@eng.ox.ac.uk">gilad.landau@eng.ox.ac.uk</a></p>
-          <p>Office: PNPL Lab, Department of Engineering Science, Parks Road, Oxford</p>
+      <section id="work">
+        <h2>Highlights</h2>
+        <div class="pub">
+          <div class="meta">2025 · Preprint</div>
+          <div class="title">Unlocking Non‑Invasive Brain‑to‑Text</div>
+          <div class="meta">G. Landau, O. Parker‑Jones, PNPL</div>
+          <ul class="flat">
+            <li><a href="#">PDF</a> · <a href="#">Code</a></li>
+          </ul>
         </div>
-        <div class="cardless">
-          <h4>Links</h4>
-          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> ·
-             <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> ·
-             <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
-          </p>
+        <div class="pub">
+          <div class="meta">2024 · Workshop Paper</div>
+          <div class="title">The Brain’s Bitter Lesson: Scaling Speech Decoding with SSL</div>
+          <div class="meta">G. Landau et al.</div>
+          <ul class="flat">
+            <li><a href="#">PDF</a></li>
+          </ul>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-      <div>© <span id="year"></span> Gilad Landau</div>
-      <button id="theme-toggle" style="border:1px solid var(--ring); background:var(--paper); color:var(--fg); padding:8px 12px; border-radius:999px; font-weight:700; cursor:pointer;">Toggle theme</button>
-    </div>
-  </footer>
+      <section id="pubs">
+        <h2>Publications (selected)</h2>
+        <div class="pub">
+          <div class="meta">2025 · Manuscript</div>
+          <div class="title">Detecting Brain Signal in Text Space</div>
+          <div class="meta">Landau, G.</div>
+        </div>
+        <div class="pub">
+          <div class="meta">2024 · Preprint</div>
+          <div class="title">Hawaiian ASR: Low‑resource Whisper Fine‑tuning</div>
+          <div class="meta">Landau, G.</div>
+        </div>
+        <div class="pub">
+          <div class="meta">2024 · Workshop</div>
+          <div class="title">Semantic Alignment Losses for Brain Decoding</div>
+          <div class="meta">Landau, G.</div>
+        </div>
+        <div class="pub">
+          <div class="meta">2023 · Project</div>
+          <div class="title">MEG2SEM: Mapping MEG to Semantic Spaces</div>
+          <div class="meta">Landau, G.</div>
+        </div>
+      </section>
 
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:gilad.landau@eng.ox.ac.uk">gilad.landau@eng.ox.ac.uk</a></p>
+        <p>Dept. of Engineering Science, Parks Road, Oxford · PNPL Lab</p>
+      </section>
+    </main>
+
+    <footer>
+      <hr class="rule" />
+      <p>© <span id="year"></span> Gilad D. Landau</p>
+    </footer>
+  </div>
   <script>
-    (function(){
-      const root = document.documentElement;
-      const key = 'theme-preference-min';
-      function apply(mode){
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const dark = mode === 'dark' || (mode === 'auto' && prefersDark);
-        root.classList.toggle('dark', dark);
-      }
-      const saved = localStorage.getItem(key) || 'auto';
-      apply(saved);
-      document.getElementById('theme-toggle').addEventListener('click', () => {
-        const current = localStorage.getItem(key) || 'auto';
-        const next = current === 'light' ? 'dark' : current === 'dark' ? 'auto' : 'light';
-        localStorage.setItem(key, next); apply(next);
-      });
-    })();
-
-    const DATA = {
-      featured: [
-        { title: 'Unlocking Non-Invasive Brain-to-Text', venue: 'Preprint', date: '2025', authors: 'G. Landau, O. Parker-Jones, PNPL', description: 'Semantic alignment of MEG with LLM embeddings; evaluation with RSA, CKA, and retrieval metrics.', links: [{ label: 'PDF', href: '#' }, { label: 'Code', href: '#' }] },
-        { title: 'The Brain’s Bitter Lesson: Scaling Speech Decoding with SSL', venue: 'Workshop Paper', date: '2024', authors: 'G. Landau et al.', description: 'Scaling laws for speech decoding from non-invasive signals using self-supervised speech models.', links: [{ label: 'PDF', href: '#' }] }
-      ],
-      publications: [
-        { year: 2025, title: 'Detecting Brain Signal in Text Space', authors: 'Landau, G.', venue: 'Manuscript', topics: ['BCI','MEG','Embeddings'] },
-        { year: 2024, title: 'Hawaiian ASR: Low-resource Whisper Fine-tuning', authors: 'Landau, G.', venue: 'Preprint', topics: ['ASR','Low-resource'] },
-        { year: 2024, title: 'Semantic Alignment Losses for Brain Decoding', authors: 'Landau, G.', venue: 'Workshop', topics: ['VICReg','SigLIP','Alignment'] },
-        { year: 2023, title: 'MEG2SEM: Mapping MEG to Semantic Spaces', authors: 'Landau, G.', venue: 'Project', topics: ['MEG','LLM','Semantics'] },
-      ]
-    };
-
-    const featuredList = document.getElementById('featured-list');
-    function renderFeatured(items){
-      featuredList.innerHTML = items.map(item => `
-        <article class="cardless">
-          <div style=\"color:var(--muted); font-weight:600;\">${item.date} · ${item.venue}</div>
-          <h4 style=\"margin:6px 0 8px; font-size: 20px;\">${item.title}</h4>
-          <div style=\"color:var(--muted); font-weight:600;\">${item.authors}</div>
-          <p style=\"margin:.5rem 0 .75rem; color:var(--fg); opacity:.9;\">${item.description}</p>
-          <p>${item.links.map(l => `<a href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`).join(' · ')}</p>
-        </article>
-      `).join('');
-    }
-
-    const pubList = document.getElementById('pub-list');
-    function renderPubs(items){
-      pubList.innerHTML = items.sort((a,b)=> b.year - a.year).map(p => `
-        <article class="cardless">
-          <div style=\"color:var(--muted); font-weight:600;\">${p.year} · ${p.venue}</div>
-          <h4>${p.title}</h4>
-          <div style=\"color:var(--muted); font-weight:600;\">${p.authors}</div>
-        </article>
-      `).join('');
-    }
-
-    renderFeatured(DATA.featured);
-    renderPubs(DATA.publications);
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
