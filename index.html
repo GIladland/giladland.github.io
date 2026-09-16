@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gilad D. Landau</title>
   <meta name="description" content="Gilad D. Landau — DPhil candidate in Engineering Science (Oxford). AI/Neuroscience, Brain–Computer Interfaces, speech decoding, MEG/EEG/OPM." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/png" href="icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #ffffff;
@@ -22,56 +24,169 @@
       --leftcol: 360px;
       --gap: 48px;
     }
+
     @media (prefers-color-scheme: dark) {
-      :root { --bg:#0b0b10; --fg:#f2f5ff; --muted:#a9b3c9; --rule:#232634; --link:#8ab4ff; }
+      :root {
+        --bg: #0b0b10;
+        --fg: #f2f5ff;
+        --muted: #a9b3c9;
+        --rule: #232634;
+        --link: #8ab4ff;
+      }
     }
+
     body {
-      margin:0;
-      background:var(--bg);
-      color:var(--fg);
-      font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      line-height:1.7;
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
     }
-    a { color:var(--link); text-decoration:none; }
-    a:hover { text-decoration:underline; }
 
-    .wrap { max-width:var(--maxw); margin:0 auto; padding:0 var(--pad); }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
 
-    header { padding:40px 0 16px; text-align:center; }
-    nav { display:flex; justify-content:center; gap:18px; flex-wrap:wrap; font-weight:600; font-size:14px; color:var(--muted); }
+    a:hover {
+      text-decoration: underline;
+    }
 
-    h1, h2, h3 { font-family:"Fraunces", Georgia, serif; }
-    h1 { font-size:clamp(34px, 5vw, 52px); line-height:1.1; margin:0; }
-    h2 { font-size:clamp(22px, 3vw, 30px); margin:0 0 16px; }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
 
-    .two-col { display:grid; grid-template-columns: var(--leftcol) 1fr; gap:var(--gap); align-items:start; }
-    .two-col > .right { max-width: var(--textw); }
+    header {
+      padding: 40px 0 16px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Fraunces", Georgia, serif;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: clamp(22px, 3vw, 30px);
+      margin: 0 0 16px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: var(--leftcol) 1fr;
+      gap: var(--gap);
+      align-items: start;
+    }
+
+    .two-col > .right {
+      max-width: var(--textw);
+    }
+
     @media (max-width: 860px) {
-      .two-col { grid-template-columns: 1fr; }
-      .two-col > .right { max-width: 100%; }
-      .center-sm { text-align:center; }
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .two-col > .right {
+        max-width: 100%;
+      }
+
+      .center-sm {
+        text-align: center;
+      }
     }
 
-    .profile { text-align:center; }
-    .profile img { width:260px; height:260px; border-radius:50%; object-fit:cover; border:2px solid var(--rule); }
-    .profile h1 { margin-top:18px; font-size:28px; }
-    .subtitle { color:var(--muted); font-weight:600; margin:6px 0 12px; }
-    .links { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:10px; }
-    .links a { font-weight:600; font-size:14px; }
+    .profile {
+      text-align: center;
+    }
 
-    section { margin: 64px 0; }
-    .pub { margin:20px 0; }
-    .pub .meta { color:var(--muted); font-weight:600; font-size:14px; }
-    .pub .title { font-weight:600; }
+    .profile img {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--rule);
+    }
 
-    footer { text-align:center; color:var(--muted); border-top:1px solid var(--rule); padding:30px 0; margin-top:72px; }
+    .profile h1 {
+      margin-top: 18px;
+      font-size: 28px;
+    }
 
-    /* slight tightening between About and Research Focus */
-    #research { margin-top: 32px; }
+    .subtitle {
+      color: var(--muted);
+      font-weight: 600;
+      margin: 6px 0 12px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .links a {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    section {
+      margin: 64px 0;
+    }
+
+    .pub {
+      margin: 20px 0;
+    }
+
+    .pub .meta {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .pub .title {
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      padding: 30px 0;
+      margin-top: 72px;
+    }
+
+    /* Slight tightening between About and Research Focus */
+    #research {
+      margin-top: 32px;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
+
     <header>
       <nav>
         <a href="#about">About</a>
@@ -81,11 +196,18 @@
       </nav>
     </header>
 
+    <!-- ABOUT -->
     <section id="about" class="two-col">
+
       <div class="left profile center-sm">
         <img src="me_deamons.png" alt="Portrait of Gilad D. Landau">
+
         <h1>Gilad D. Landau</h1>
-        <p class="subtitle">AI researcher · DPhil candidate, University of Oxford</p>
+
+        <p class="subtitle">
+          AI researcher · DPhil candidate, University of Oxford
+        </p>
+
         <div class="links">
           <a href="mailto:gilad.landau@worc.ox.ac.uk">Email</a>
           <a href="https://github.com/GIladland" target="_blank">GitHub</a>
@@ -95,95 +217,198 @@
       </div>
 
       <div class="right">
+
         <h2>About me</h2>
+
         I am an AI researcher driven to understand the deep principles from which intelligence emerges in machines and brains.<br>
-        I was a technologist and studied cognitive science and philosophy; I'm now working on a D.Phil at Oxford’s 
-        <a href="https://neural-processing-lab.github.io/" target="_blank" rel="noopener"><strong>PNPL</strong></a> lab, where I study how AI can decode meaning from the brain.
+
+        I was a technologist and studied cognitive science and philosophy; I'm now working on a D.Phil at Oxford’s
+        <a href="https://neural-processing-lab.github.io/" target="_blank" rel="noopener">
+          <strong>PNPL</strong>
+        </a>
+        lab, where I study how AI can decode meaning from the brain.
 
         <section id="research">
           <h2>Research Focus</h2>
+
           <p>
-            My research explores the intersection of brain and artificial intelligence, with a particular interest in 
-            <strong>unified representational structures of meaning</strong> — how semantic information is organized and shared 
+            My research explores the intersection of brain and artificial intelligence, with a particular interest in
+            <strong>unified representational structures of meaning</strong> — how semantic information is organized and shared
             across biological and artificial systems.
           </p>
         </section>
-      </div>    
-    </section>
 
-    <section id="work" class="two-col">
-      <div class="left" aria-hidden="true"></div>
-      <div class="right">
-        <h2>Highlights</h2>
-        <div class="pub">
-          <div class="meta">2026 · OpenReview</div>
-          <div class="title">The Semantic Bottleneck: Leveraging Semantic Representations for Non-Invasive Speech Decoding</div>
-          <div class="meta">G. Landau, D. Jayalath, O. P. Jones</div>
-          <a href="https://openreview.net/pdf?id=lKMQKmuTEh" target="_blank">Link</a>
-        </div>
-        <div class="pub">
-          <div class="meta">2026 · OpenReview</div>
-          <div class="title">The Concept of Representation in ML: Beyond Plato and Aristotle</div>
-          <div class="meta">G. Landau, A. Keren</div>
-          <a href="https://openreview.net/pdf?id=GgbpbARdbI" target="_blank">Link</a>
-        </div>
       </div>
     </section>
 
-    <section id="pubs" class="two-col">
+    <!-- HIGHLIGHTS -->
+    <section id="work" class="two-col">
+
       <div class="left" aria-hidden="true"></div>
+
       <div class="right">
+
+        <h2>Highlights</h2>
+
+        <div class="pub">
+          <div class="meta">2026 · OpenReview</div>
+          <div class="title">
+            The Semantic Bottleneck: Leveraging Semantic Representations for Non-Invasive Speech Decoding
+          </div>
+          <div class="meta">
+            <strong>G. Landau</strong>, D. Jayalath, O. P. Jones
+          </div>
+          <a href="https://openreview.net/pdf?id=lKMQKmuTEh" target="_blank">Link</a>
+        </div>
+
+        <div class="pub">
+          <div class="meta">2026 · OpenReview</div>
+          <div class="title">
+            The Concept of Representation in ML: Beyond Plato and Aristotle
+          </div>
+          <div class="meta">
+            <strong>G. Landau</strong>, A. Keren
+          </div>
+          <a href="https://openreview.net/pdf?id=GgbpbARdbI" target="_blank">Link</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="pubs" class="two-col">
+
+      <div class="left" aria-hidden="true"></div>
+
+      <div class="right">
+
         <h2>Publications</h2>
+
+        <!-- 2026 -->
+
+        <div class="pub">
+          <div class="meta">2026 · arXiv:2609.03231</div>
+          <div class="title">
+            The 2026 PNPL Competition: Word Classification and Efficient Cross-Subject Generalisation in LibriBrain100
+          </div>
+          <div class="meta">
+            F. Mantegna, G. Elvers, D. Jayalath, <strong>G. Landau</strong>, T. Kim,
+            M. Özdogan, L. Kurth, T. Kwon, S. Cho, B. Ballyk, A. Fung, A. Greer,
+            P. Somaiya, C. Herff, Y. Mantilla Ramos, H. Abdelhedi, K. Jerbi,
+            G. Farquhar, B. Shillingford, M. Woolrich, O. P. Jones
+          </div>
+          <a href="https://arxiv.org/abs/2609.03231" target="_blank">Link</a>
+        </div>
+
+        <div class="pub">
+          <div class="meta">2026 · arXiv:2608.25204</div>
+          <div class="title">
+            LibriBrain100: One Hundred Hours of Broad and Deep MEG Data for Neural Speech Decoding at Scale
+          </div>
+          <div class="meta">
+            F. Mantegna, D. Jayalath, G. Elvers, T. Kim, B. Ballyk, A. Fung,
+            S. Cho, T. Kwon, L. Kurth, M. Özdogan, <strong>G. Landau</strong>,
+            P. Somaiya, N. Voets, M. Woolrich, O. P. Jones
+          </div>
+          <a href="https://arxiv.org/abs/2608.25204" target="_blank">Link</a>
+        </div>
+
+        <!-- 2025 -->
 
         <div class="pub">
           <div class="meta">2025 · arXiv:2506.02098</div>
-          <div class="title">LibriBrain: Over 50 Hours of Within-Subject MEG to Improve Speech Decoding Methods at Scale</div>
-          <div class="meta">M. Özdogan, G. Landau, G. Elvers, D. Jayalath, P. Somaiya, F. Mantegna, ...</div>
+          <div class="title">
+            LibriBrain: Over 50 Hours of Within-Subject MEG to Improve Speech Decoding Methods at Scale
+          </div>
+          <div class="meta">
+            M. Özdogan, <strong>G. Landau</strong>, G. Elvers, D. Jayalath,
+            P. Somaiya, F. Mantegna, ...
+          </div>
           <a href="https://arxiv.org/abs/2506.02098" target="_blank">Link</a>
         </div>
 
         <div class="pub">
           <div class="meta">2025 · arXiv:2506.10165</div>
-          <div class="title">The 2025 PNPL competition: Speech detection and phoneme classification in the LibriBrain dataset</div>
-          <div class="meta">G. Landau, M. Özdogan, G. Elvers, F. Mantegna, P. Somaiya, D. Jayalath, ...</div>
+          <div class="title">
+            The 2025 PNPL competition: Speech detection and phoneme classification in the LibriBrain dataset
+          </div>
+          <div class="meta">
+            <strong>G. Landau</strong>, M. Özdogan, G. Elvers, F. Mantegna,
+            P. Somaiya, D. Jayalath, ...
+          </div>
           <a href="https://openreview.net/forum?id=lKMQKmuTEh" target="_blank">Link</a>
         </div>
-        <div class="pub">
-          <div class="meta">2024 · arXiv:2406.04328</div>
-          <div class="title">The Brain’s Bitter Lesson: Scaling Speech Decoding With Self-Supervised Learning</div>
-          <div class="meta">D. Jayalath, G. Landau, B. Shillingford, M. Woolrich, O. P. Jones</div>
-          <a href="https://arxiv.org/abs/2406.04328" target="_blank">Link</a>
-        </div>        
 
         <div class="pub">
           <div class="meta">2025 · arXiv:2505.13446</div>
-          <div class="title">Unlocking non-invasive brain-to-text</div>
-          <div class="meta">D. Jayalath, G. Landau, O. P. Jones</div>
+          <div class="title">
+            Unlocking non-invasive brain-to-text
+          </div>
+          <div class="meta">
+            D. Jayalath, <strong>G. Landau</strong>, O. P. Jones
+          </div>
           <a href="https://arxiv.org/abs/2505.13446" target="_blank">Link</a>
         </div>
 
         <div class="pub">
           <div class="meta">2025 · arXiv preprint</div>
-          <div class="title">Elementary, My Dear Watson: Non-Invasive Neural Keyword Spotting in the LibriBrain Dataset</div>
-          <div class="meta">Gereon Elvers, Gilad Landau, Oiwi Parker Jones</div>
+          <div class="title">
+            Elementary, My Dear Watson: Non-Invasive Neural Keyword Spotting in the LibriBrain Dataset
+          </div>
+          <div class="meta">
+            G. Elvers, <strong>G. Landau</strong>, O. P. Jones
+          </div>
           <a href="https://arxiv.org/abs/2510.21038" target="_blank">Link</a>
         </div>
+
+        <!-- 2024 -->
+
+        <div class="pub">
+          <div class="meta">2024 · arXiv:2406.04328</div>
+          <div class="title">
+            The Brain’s Bitter Lesson: Scaling Speech Decoding With Self-Supervised Learning
+          </div>
+          <div class="meta">
+            D. Jayalath, <strong>G. Landau</strong>, B. Shillingford,
+            M. Woolrich, O. P. Jones
+          </div>
+          <a href="https://arxiv.org/abs/2406.04328" target="_blank">Link</a>
+        </div>
+
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="two-col">
+
       <div class="left" aria-hidden="true"></div>
+
       <div class="right">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:gilad.landau@worc.ox.ac.uk">gilad.landau@worc.ox.ac.uk</a></p>
-        <p>Dept. of Engineering Science, Parks Road, Oxford · PNPL Lab</p>
+
+        <p>
+          Email:
+          <a href="mailto:gilad.landau@worc.ox.ac.uk">
+            gilad.landau@worc.ox.ac.uk
+          </a>
+        </p>
+
+        <p>
+          Dept. of Engineering Science, Parks Road, Oxford · PNPL Lab
+        </p>
       </div>
+
     </section>
 
     <footer>
       <p>© <span id="year"></span> Gilad D. Landau</p>
     </footer>
+
   </div>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
